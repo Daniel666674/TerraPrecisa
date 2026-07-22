@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraPrecisa | Ingeniería Topográfica y Geomática en Colombia</title>
+<meta name="description" content="TerraPrecisa: levantamientos topográficos, geomática, GNSS, LiDAR y fotogrametría con drones. Precisión técnica para tus proyectos de construcción e infraestructura en Colombia.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='20,80 80,80 65,20 35,20' fill='%231B3A5C'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%232E9B3F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ SVG SPRITE (icons) ============ -->
+<svg style="display:none">
+  <symbol id="icon-whatsapp" viewBox="0 0 32 32"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.42.7 4.68 1.92 6.58L4 29l7.6-1.87a11.9 11.9 0 0 0 4.42.85h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.7h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.75.92 1-3.66-.24-.38a9.86 9.86 0 0 1-1.5-5.26c0-5.46 4.44-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.83 9.83 0 0 1 2.9 7.01c0 5.46-4.45 9.97-9.92 9.97zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.37-1.47a8.9 8.9 0 0 1-1.64-2.04c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.06 2.89 1.21 3.09c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.3 2.3z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm17.4 2H3.6L12 12.5 20.4 7zM3 8.7V17h18V8.7l-8.5 5.6a1 1 0 0 1-1 0L3 8.7z"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.4 7-12.5A7 7 0 0 0 5 9.5C5 14.6 12 22 12 22zm0-9.8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9.5 17.3 4.7 12.5l1.4-1.4 3.4 3.4 8.4-8.4 1.4 1.4z"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5.5-6.5L19 12l-6.5 6.5"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+
+  <!-- Service icons -->
+  <symbol id="icon-station" viewBox="0 0 48 48"><path d="M24 6v10M14 40h20l-3-9H17l-3 9z M20 31h8l2-9H18l2 9z M24 16a6 6 0 0 1 6 6c0 2-1 3-2 4l-4 2-4-2c-1-1-2-2-2-4a6 6 0 0 1 6-6z"/></symbol>
+  <symbol id="icon-globe" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5 5 7 11 7 17s-2 12-7 17c-5-5-7-11-7-17s2-12 7-17z"/></symbol>
+  <symbol id="icon-satellite" viewBox="0 0 48 48"><path d="M18 22l8-8 8 8-8 8zM10 30l4-4M26 14l4-4M6 26l4 4 4-4-4-4zM34 10l4 4-4 4-4-4zM24 30v10M18 40h12"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 48 48"><path d="M24 6 6 16l18 10 18-10zM6 24l18 10 18-10M6 32l18 10 18-10"/></symbol>
+  <symbol id="icon-drone" viewBox="0 0 48 48"><circle cx="24" cy="24" r="5"/><path d="M14 14 20 20M34 14 28 20M14 34 20 28M34 34 28 28"/><circle cx="10" cy="10" r="5"/><circle cx="38" cy="10" r="5"/><circle cx="10" cy="38" r="5"/><circle cx="38" cy="38" r="5"/></symbol>
+  <symbol id="icon-lidar" viewBox="0 0 48 48"><path d="M24 40V22M24 22l-6-14M24 22l6-14M24 22l-14 6M24 22l14 6"/><circle cx="24" cy="22" r="3"/><path d="M8 40a16 16 0 0 1 32 0" stroke-dasharray="2 3"/></symbol>
+
+  <!-- Process icons -->
+  <symbol id="icon-search" viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="M30 30 42 42"/></symbol>
+  <symbol id="icon-plan" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="2"/><path d="M16 16h16M16 24h16M16 32h9"/></symbol>
+  <symbol id="icon-field" viewBox="0 0 48 48"><path d="M8 40 20 14l6 12 6-20 8 34z"/></symbol>
+  <symbol id="icon-deliver" viewBox="0 0 48 48"><path d="M6 16 24 6l18 10-18 10z"/><path d="M6 16v16l18 10 18-10V16M24 26v16"/></symbol>
+
+  <!-- Sector icons -->
+  <symbol id="icon-building" viewBox="0 0 48 48"><rect x="10" y="8" width="20" height="34"/><path d="M30 20h8v22h-8M16 16h2M22 16h2M16 22h2M22 22h2M16 28h2M22 28h2M16 34h2M22 34h2"/></symbol>
+  <symbol id="icon-energy" viewBox="0 0 48 48"><path d="M26 4 10 26h10l-4 18 18-24H24z"/></symbol>
+  <symbol id="icon-crop" viewBox="0 0 48 48"><path d="M24 42V22M24 22c0-8-6-14-14-14 0 8 6 14 14 14zM24 22c0-6 5-11 11-11 0 6-5 11-11 11z"/></symbol>
+  <symbol id="icon-road" viewBox="0 0 48 48"><path d="M16 42 20 6h8l4 36"/><path d="M24 10v4M24 18v4M24 26v4M24 34v4"/></symbol>
+  <symbol id="icon-gov" viewBox="0 0 48 48"><path d="M24 6 42 16H6zM10 20v16M18 20v16M30 20v16M38 20v16M6 40h36"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 48 48"><path d="M8 22 24 8l16 14v16H8z"/><path d="M20 38V26h8v12"/></symbol>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 60 54" class="brand__svg">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1E6FA0"/>
+              <stop offset="1" stop-color="#4CAF50"/>
+            </linearGradient>
+          </defs>
+          <polygon points="10,46 50,46 40,8 20,8" fill="none" stroke="url(#brandGrad)" stroke-width="3"/>
+          <path d="M13 46c6-10 10-16 17-16s10 6 17 16" fill="none" stroke="url(#brandGrad)" stroke-width="2" opacity=".8"/>
+          <path d="M17 46c5-14 8-22 13-22s8 8 13 22" fill="none" stroke="url(#brandGrad)" stroke-width="2" opacity=".55"/>
+          <circle cx="30" cy="27" r="3" fill="#2E9B3F"/>
+          <line x1="30" y1="27" x2="44" y2="10" stroke="#1B3A5C" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name"><span class="brand__terra">Terra</span><span class="brand__precisa">Precisa</span></span>
+        <span class="brand__sub">Ingeniería Topográfica y Geomática</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#topografia">Topografía</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#valores">Valores</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener"
+         href="https://wa.me/573204247931?text=Hola%20TerraPrecisa%2C%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios%20topogr%C3%A1ficos.">
+        <svg class="icon"><use href="#icon-whatsapp"/></svg>
+        <span>Cotiza ahora</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg class="icon icon--open"><use href="#icon-menu"/></svg>
+        <svg class="icon icon--close"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <svg class="hero__contours" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+      <g class="contour-group" fill="none" stroke-width="1.4">
+        <path class="c1" d="M-100,300 C 200,150 400,450 700,250 S 1200,120 1700,320"/>
+        <path class="c2" d="M-100,380 C 220,240 420,520 720,330 S 1220,200 1700,400"/>
+        <path class="c3" d="M-100,460 C 240,330 440,590 740,410 S 1240,280 1700,480"/>
+        <path class="c4" d="M-100,540 C 260,420 460,660 760,490 S 1260,360 1700,560"/>
+        <path class="c5" d="M-100,620 C 280,510 480,730 780,570 S 1280,440 1700,640"/>
+        <path class="c6" d="M-100,700 C 300,600 500,800 800,650 S 1300,520 1700,720"/>
+        <path class="c7" d="M-100,150 C 180,60 380,320 680,140 S 1180,20 1700,180"/>
+        <path class="c8" d="M-100,800 C 320,700 520,880 820,740 S 1320,610 1700,800"/>
+      </g>
+    </svg>
+    <div class="hero__glow"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow eyebrow--light reveal">Ingeniería Topográfica y Geomática · Colombia</p>
+    <h1 class="hero__title reveal">
+      Donde la precisión<br><span class="text-accent">toma forma.</span>
+    </h1>
+    <p class="hero__subtitle reveal">
+      En TerraPrecisa convertimos cada metro de terreno en información exacta y confiable.
+      Levantamientos topográficos, geomática, tecnología GNSS, LiDAR y fotogrametría con
+      drones para respaldar tus proyectos de construcción, infraestructura y desarrollo
+      territorial en toda Colombia.
+    </p>
+
+    <div class="hero__cta reveal">
+      <a class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"
+         href="https://wa.me/573204247931?text=Hola%20TerraPrecisa%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto%20topogr%C3%A1fico.">
+        <svg class="icon"><use href="#icon-whatsapp"/></svg>
+        <span>Cotiza tu proyecto por WhatsApp</span>
+      </a>
+      <a class="btn btn--ghost btn--lg" href="#servicios">
+        <span>Ver nuestros servicios</span>
+        <svg class="icon"><use href="#icon-arrow"/></svg>
+      </a>
+    </div>
+
+    <ul class="hero__chips reveal">
+      <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Precisión milimétrica</li>
+      <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Tecnología GNSS y LiDAR</li>
+      <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Cobertura nacional</li>
+      <li><svg class="icon icon--sm"><use href="#icon-check"/></svg>Respuesta ágil</li>
+    </ul>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ============ NOSOTROS ============ -->
+<section class="section" id="nosotros">
+  <div class="container about">
+    <div class="about__text reveal">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2>Expertos en Servicios Topográficos</h2>
+      <p>
+        TerraPrecisa es una firma de ingeniería especializada en topografía y geomática,
+        creada para responder a las exigencias técnicas del desarrollo territorial moderno
+        en Colombia. Acompañamos a constructoras, firmas de ingeniería, desarrolladores
+        inmobiliarios y entidades públicas en cada etapa de sus proyectos, desde el
+        levantamiento inicial hasta la entrega de información georreferenciada lista para
+        la toma de decisiones.
+      </p>
+      <p>
+        Nuestro enfoque metódico combina equipos de última generación —estaciones totales,
+        receptores GNSS, sensores LiDAR y drones de fotogrametría— con procesos de control
+        de calidad rigurosos. Entendemos que en ingeniería no existe margen para el error:
+        cada coordenada, cada curva de nivel y cada dato entregado debe sostener decisiones
+        que impactan tiempo, presupuesto y seguridad.
+      </p>
+      <ul class="checklist">
+        <li><svg class="icon"><use href="#icon-check"/></svg>Equipos topográficos de alta precisión</li>
+        <li><svg class="icon"><use href="#icon-check"/></svg>Entregables digitales listos para CAD / GIS</li>
+        <li><svg class="icon"><use href="#icon-check"/></svg>Ingenieros y topógrafos calificados</li>
+      </ul>
+    </div>
+
+    <div class="about__art reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 460" class="art-station">
+        <rect x="0" y="0" width="420" height="460" rx="18" class="art-bg"/>
+        <g class="art-contours" fill="none" stroke-width="2">
+          <path d="M20,380 C 100,340 140,420 220,370 S 340,320 400,370" opacity=".18"/>
+          <path d="M20,340 C 110,290 150,380 230,320 S 350,270 400,320" opacity=".28"/>
+          <path d="M20,300 C 120,240 160,340 240,270 S 360,220 400,270" opacity=".4"/>
+        </g>
+        <g transform="translate(150,90)">
+          <line x1="60" y1="0" x2="60" y2="60" stroke="#F2E6C9" stroke-width="4"/>
+          <circle cx="60" cy="70" r="22" fill="none" stroke="#4CAF50" stroke-width="4"/>
+          <circle cx="60" cy="70" r="7" fill="#4CAF50"/>
+          <path d="M20 220 L45 110 L75 110 L100 220 Z" fill="#F2E6C9" opacity=".9"/>
+          <path d="M0 240 L120 240 L108 220 L12 220 Z" fill="#1E6FA0"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUE ES LA TOPOGRAFIA ============ -->
+<section class="section section--dark" id="topografia">
+  <div class="container topo">
+    <div class="topo__art reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 420" class="art-blueprint">
+        <rect x="0" y="0" width="420" height="420" rx="18" class="art-bg-blueprint"/>
+        <g stroke="#EAF3FF" stroke-width="1" opacity=".18">
+          <path d="M40,40 h340 M40,90 h340 M40,140 h340 M40,190 h340 M40,240 h340 M40,290 h340 M40,340 h340 M40,380 h340"/>
+          <path d="M40,40 v340 M90,40 v340 M140,40 v340 M190,40 v340 M240,40 v340 M290,40 v340 M340,40 v340 M380,40 v340"/>
+        </g>
+        <circle cx="210" cy="210" r="90" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="210" cy="210" r="55" fill="none" stroke="#F2E6C9" stroke-width="2"/>
+        <line x1="210" y1="60" x2="210" y2="360" stroke="#F2E6C9" stroke-width="1.4"/>
+        <line x1="60" y1="210" x2="360" y2="210" stroke="#F2E6C9" stroke-width="1.4"/>
+        <circle cx="210" cy="210" r="6" fill="#4CAF50"/>
+        <line x1="210" y1="210" x2="300" y2="120" stroke="#F2E6C9" stroke-width="2"/>
+        <polygon points="300,120 292,132 312,132" fill="#F2E6C9"/>
+      </svg>
+    </div>
+
+    <div class="topo__text reveal">
+      <p class="eyebrow eyebrow--light">Fundamentos</p>
+      <h2 class="text-light">¿Qué es la Topografía?</h2>
+      <p class="text-light-soft">
+        La topografía es la disciplina de la ingeniería encargada de determinar, con
+        exactitud milimétrica, la posición espacial de los puntos sobre la superficie
+        terrestre, junto con sus formas, elevaciones y detalles físicos.
+      </p>
+      <p class="text-light-soft">
+        Funciona como el cimiento técnico sobre el cual se planifican, diseñan y ejecutan
+        los proyectos de ingeniería civil, arquitectura, minería y desarrollo territorial.
+        A través de la medición exhaustiva de ángulos, distancias y elevaciones, traducimos
+        la realidad física del terreno en datos concretos, planos y modelos digitales exactos.
+      </p>
+      <p class="text-light-soft">
+        Un levantamiento topográfico confiable reduce riesgos, optimiza diseños y evita
+        sobrecostos durante la construcción: es el primer paso hacia un proyecto exitoso.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">Nuestras soluciones</p>
+      <h2>Servicios Ofrecidos</h2>
+      <p class="section__lead">
+        Soluciones topográficas y geomáticas de punta a punta, adaptadas a la escala y
+        complejidad de tu proyecto.
+      </p>
+    </div>
+
+    <div class="grid grid--services">
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-station"/></svg></div>
+        <h3>Topografía</h3>
+        <p>Levantamientos planimétricos y altimétricos, deslindes prediales, replanteos de
+          diseño y control de obra con precisión certificada para tus proyectos de
+          construcción e infraestructura.</p>
+      </article>
+
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-globe"/></svg></div>
+        <h3>Geomática</h3>
+        <p>Integración, análisis y modelamiento de datos espaciales. Convertimos información
+          geográfica dispersa en cartografía digital precisa y modelos 3D del terreno.</p>
+      </article>
+
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-satellite"/></svg></div>
+        <h3>GNSS</h3>
+        <p>Georreferenciación de alta precisión mediante tecnología RTK y PPK, con redes
+          geodésicas y monumentación que garantizan coordenadas exactas en todo el territorio.</p>
+      </article>
+
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-layers"/></svg></div>
+        <h3>SIG</h3>
+        <p>Sistemas de Información Geográfica para la gestión, análisis y visualización de
+          datos territoriales, con mapas temáticos que facilitan la planificación.</p>
+      </article>
+
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-drone"/></svg></div>
+        <h3>Dron</h3>
+        <p>Fotogrametría aérea con drones de alta resolución: ortomosaicos, modelos digitales
+          de elevación y cobertura eficiente de grandes extensiones en tiempo récord.</p>
+      </article>
+
+      <article class="card card--service reveal">
+        <div class="card__icon"><svg class="icon icon--lg"><use href="#icon-lidar"/></svg></div>
+        <h3>LiDAR</h3>
+        <p>Captura de nubes de puntos de alta densidad para modelado 3D de precisión en
+          corredores viales, líneas de transmisión, proyectos mineros y zonas de difícil acceso.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">Cómo trabajamos</p>
+      <h2>Nuestro Proceso</h2>
+      <p class="section__lead">Un método claro y controlado, de principio a fin, para que sepas exactamente qué esperar.</p>
+    </div>
+
+    <div class="process">
+      <div class="process__line" aria-hidden="true"></div>
+      <div class="process__step reveal">
+        <div class="process__icon"><svg class="icon icon--lg"><use href="#icon-search"/></svg><span class="process__num">01</span></div>
+        <h3>Consulta y diagnóstico</h3>
+        <p>Analizamos el alcance, la normativa aplicable y los objetivos técnicos de tu proyecto para definir la metodología más precisa.</p>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__icon"><svg class="icon icon--lg"><use href="#icon-plan"/></svg><span class="process__num">02</span></div>
+        <h3>Planificación técnica</h3>
+        <p>Diseñamos el plan de campo: equipos, puntos de control y cronograma, optimizando tiempos sin sacrificar exactitud.</p>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__icon"><svg class="icon icon--lg"><use href="#icon-field"/></svg><span class="process__num">03</span></div>
+        <h3>Trabajo de campo</h3>
+        <p>Ejecutamos la captura de datos con estaciones totales, GNSS, LiDAR o drones, según la naturaleza del terreno y el proyecto.</p>
+      </div>
+      <div class="process__step reveal">
+        <div class="process__icon"><svg class="icon icon--lg"><use href="#icon-deliver"/></svg><span class="process__num">04</span></div>
+        <h3>Entrega de resultados</h3>
+        <p>Procesamos, validamos y entregamos planos, modelos y datos georreferenciados listos para tu equipo de ingeniería.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">A quién servimos</p>
+      <h2>Sectores que Atendemos</h2>
+    </div>
+
+    <div class="grid grid--sectors">
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-building"/></svg><span>Construcción e infraestructura</span></div>
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-home"/></svg><span>Desarrollo inmobiliario</span></div>
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-energy"/></svg><span>Energía y minería</span></div>
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-crop"/></svg><span>Agricultura de precisión</span></div>
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-road"/></svg><span>Vías y transporte</span></div>
+      <div class="sector reveal"><svg class="icon icon--md"><use href="#icon-gov"/></svg><span>Entidades públicas y catastro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALORES ============ -->
+<section class="section section--cream" id="valores">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">Nuestra base</p>
+      <h2>Valores Fundamentales</h2>
+    </div>
+
+    <div class="grid grid--values">
+      <div class="card card--value reveal">
+        <span class="card__num">01</span>
+        <h3>Excelencia profesional</h3>
+        <p>Mantenemos los más altos estándares técnicos en cada fase del proyecto. Nuestro
+          equipo opera con formación certificada y actualización constante en las
+          tecnologías topográficas y geomáticas más avanzadas.</p>
+      </div>
+      <div class="card card--value reveal">
+        <span class="card__num">02</span>
+        <h3>Integridad técnica</h3>
+        <p>Nuestros procesos son rigurosos, documentados y transparentes. Utilizamos
+          metodología comprobada y tecnología de punta para respaldar cada dato que
+          entregamos, sin atajos ni excepciones.</p>
+      </div>
+      <div class="card card--value reveal">
+        <span class="card__num">03</span>
+        <h3>Compromiso con la exactitud</h3>
+        <p>La precisión no es un objetivo, es nuestro estándar mínimo. Entregamos resultados
+          fiables sobre los cuales puedes construir, diseñar y decidir con total seguridad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="cta-banner__bg" aria-hidden="true"></div>
+  <div class="container cta-banner__inner reveal">
+    <h2>Seguridad técnica en cada medición.</h2>
+    <p>Habla hoy mismo con nuestro equipo de ingenieros topógrafos y recibe asesoría
+      personalizada para tu proyecto, sin costo ni compromiso.</p>
+    <a class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"
+       href="https://wa.me/573204247931?text=Hola%20TerraPrecisa%2C%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20t%C3%A9cnica%20para%20mi%20proyecto.">
+      <svg class="icon"><use href="#icon-whatsapp"/></svg>
+      <span>Escríbenos por WhatsApp</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow eyebrow--center">Contacto</p>
+      <h2>Hablemos de tu Proyecto</h2>
+      <p class="section__lead">Cuéntanos qué necesitas y te responderemos a la brevedad. La
+        forma más rápida de contactarnos es por WhatsApp.</p>
+    </div>
+
+    <div class="grid grid--contact">
+      <a class="contact-card contact-card--main reveal" target="_blank" rel="noopener"
+         href="https://wa.me/573204247931?text=Hola%20TerraPrecisa%2C%20quiero%20hablar%20sobre%20un%20proyecto.">
+        <div class="contact-card__icon"><svg class="icon icon--lg"><use href="#icon-whatsapp"/></svg></div>
+        <h3>WhatsApp</h3>
+        <p>+57 320 424 7931</p>
+        <span class="contact-card__cta">Chatea ahora <svg class="icon icon--sm"><use href="#icon-arrow"/></svg></span>
+      </a>
+
+      <a class="contact-card reveal" href="mailto:terraprecisacol@gmail.com">
+        <div class="contact-card__icon"><svg class="icon icon--lg"><use href="#icon-mail"/></svg></div>
+        <h3>Correo electrónico</h3>
+        <p>terraprecisacol@gmail.com</p>
+      </a>
+
+      <div class="contact-card reveal">
+        <div class="contact-card__icon"><svg class="icon icon--lg"><use href="#icon-pin"/></svg></div>
+        <h3>Cobertura</h3>
+        <p>Servicio a nivel nacional en Colombia</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#inicio" class="brand brand--footer">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 60 54" class="brand__svg">
+            <polygon points="10,46 50,46 40,8 20,8" fill="none" stroke="#4CAF50" stroke-width="3"/>
+            <path d="M13 46c6-10 10-16 17-16s10 6 17 16" fill="none" stroke="#4CAF50" stroke-width="2" opacity=".7"/>
+            <circle cx="30" cy="27" r="3" fill="#4CAF50"/>
+            <line x1="30" y1="27" x2="44" y2="10" stroke="#F2E6C9" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name brand__name--footer">TerraPrecisa</span>
+        </span>
+      </a>
+      <p class="footer__tagline">Donde la precisión toma forma.</p>
+    </div>
+
+    <nav class="footer__nav">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#topografia">Topografía</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#valores">Valores</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="footer__contact">
+      <a href="tel:+573204247931"><svg class="icon"><use href="#icon-phone"/></svg>+57 320 424 7931</a>
+      <a href="mailto:terraprecisacol@gmail.com"><svg class="icon"><use href="#icon-mail"/></svg>terraprecisacol@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© <span id="year"></span> TerraPrecisa · Ingeniería Topográfica y Geomática · Colombia</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"
+   href="https://wa.me/573204247931?text=Hola%20TerraPrecisa%2C%20quiero%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios.">
+  <span class="wa-float__ping"></span>
+  <svg class="icon"><use href="#icon-whatsapp"/></svg>
+  <span class="wa-float__label">¿Tienes un proyecto?<br><strong>Escríbenos ahora</strong></span>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
